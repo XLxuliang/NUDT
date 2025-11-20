@@ -1,0 +1,16 @@
+path: ./input/data/imagenet10/
+train: train
+val: val
+test: null
+names:
+  0: tench
+  1: goldfish
+  2: great white shark
+  3: tiger shark
+  4: hammerhead shark
+  5: electric ray
+  6: stingray
+  7: cock
+  8: hen
+  9: ostrich
+download: data/scripts/get_imagenet10.sh

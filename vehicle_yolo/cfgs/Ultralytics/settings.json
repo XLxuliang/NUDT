@@ -1,0 +1,21 @@
+{
+  "settings_version": "0.0.6",
+  "datasets_dir": "/data6/user23215430/datasets",
+  "weights_dir": "/data6/user23215430/NUDT_attack_vehicle/weights",
+  "runs_dir": "/data6/user23215430/NUDT_attack_vehicle/runs",
+  "uuid": "d58f79928592feba571f42670f583d1230652c2006edd508d4602a3a2874e6f2",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "hub": true,
+  "mlflow": true,
+  "neptune": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": true
+}
