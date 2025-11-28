@@ -22,7 +22,7 @@ venv/
 runs/
 
 # 明确忽略数据与权重目录（即使上面的扩展名规则已覆盖）
-input/
+# input/
 output/
 image-test.py
 test-defend.bash
