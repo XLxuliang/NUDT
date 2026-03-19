@@ -97,13 +97,19 @@ class VMIFGSM(Attack):
                     images
                 ).uniform_(-self.eps * self.beta, self.eps * self.beta)
                 neighbor_images.requires_grad = True
-                outputs = self.get_logits(neighbor_images)
+                # outputs = self.get_logits(neighbor_images)
+                
+                neighbor_images_list = [neighbor_images[i] for i in range(neighbor_images.shape[0])]
+                self.model.train() # train才会求loss
+                loss_dict = self.model(neighbor_images_list, targets)
 
                 # Calculate loss
                 if self.targeted:
                     cost = -loss(outputs, target_labels)
                 else:
-                    cost = loss(outputs, labels)
+                    # cost = loss(outputs, labels)
+                    cost = sum(loss for loss in loss_dict.values())
+                    
                 GV_grad += torch.autograd.grad(
                     cost, neighbor_images, retain_graph=False, create_graph=False
                 )[0]

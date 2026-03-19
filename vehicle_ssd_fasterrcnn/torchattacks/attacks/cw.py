@@ -110,7 +110,7 @@ class CW(Attack):
             else:
                 # If the attack is not targeted we simply make these two values unequal
                 # condition = (pre != labels).float()
-                condition = (not torch.equal(pre, label)).float()
+                condition = float(not torch.equal(pre, labels))
 
             # Filter out images that get either correct predictions or non-decreasing loss,
             # i.e., only images that are both misclassified and loss-decreasing are left

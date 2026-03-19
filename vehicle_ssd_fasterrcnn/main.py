@@ -94,17 +94,28 @@ def add_args(args):
         # print(model_path)
         args.model_path = model_path
     
-    data_yaml = glob.glob(os.path.join(os.path.join(f'{args.input_path}/data', '*/'), '*.yaml'))[0]
-    # print(data_yaml)
-    args.data_yaml = data_yaml
-    data_name = os.path.splitext(os.path.basename(data_yaml))[0]
-    # print(data_name)
-    args.data_name = data_name
+    
     if args.process == 'attack' or (args.process == 'defend' and args.defend_method != 'adversarial_training') or args.process == 'predict':
-        data_path = glob.glob(os.path.join(f'{args.input_path}/data', '*/'))[0]
+        data_path = f'{args.input_path}/data'
+        
+        data_yaml = glob.glob(os.path.join(f'{args.input_path}/data', '*.yaml'))[0]
+        # print(data_yaml)
+        args.data_yaml = data_yaml
+        data_name = os.path.splitext(os.path.basename(data_yaml))[0]
+        # print(data_name)
+        args.data_name = data_name
+    
     else:
         # data_path = glob.glob(os.path.join(os.path.join(f'{args.input_path}/data', '*/'), '*/'))[0]
         data_path = glob.glob(os.path.join(f'{args.input_path}/data', '*/'))[0]
+        
+        data_yaml = glob.glob(os.path.join(os.path.join(f'{args.input_path}/data', '*/'), '*.yaml'))[0]
+        # print(data_yaml)
+        args.data_yaml = data_yaml
+        data_name = os.path.splitext(os.path.basename(data_yaml))[0]
+        # print(data_name)
+        args.data_name = data_name
+    
     # print(data_path)
     args.data_path = data_path
     

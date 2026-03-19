@@ -67,8 +67,8 @@ def attack_use_adv(args):
     }
     sse_print(event, data)
     
-    ori_images_flod = f"{args.data_path}ori_images"
-    adv_images_flod = f"{args.data_path}adv_images"
+    ori_images_flod = f"{args.data_path}/ori_images"
+    adv_images_flod = f"{args.data_path}/adv_images"
     # print(ori_images_flod)
     # print(adv_images_flod)
     

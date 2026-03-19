@@ -104,7 +104,7 @@
 ### 构建 Docker 镜像
 ```bash
 cd vehicle_ssd_fasterrcnn
-docker build -t cd vehicle_ssd_fasterrcnn:latest .
+docker build -t vehicle_ssd_fasterrcnn:latest .
 ```
 
 ### 输入输出目录结构
